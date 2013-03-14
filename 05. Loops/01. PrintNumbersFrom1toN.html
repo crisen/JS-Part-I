@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to print all the numbers from 1 to N</h1>
+        <div id="input">
+            <label for="number">N = </label>
+            <input type="text" id="number" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = jsConsole.readFloat("#number");
+
+            jsConsole.writeLine("All the numbers from 1 to N are:")
+            for (var i = 1; i <= input; i++)
+            {
+                jsConsole.writeLine(i);
+            }
+
+            jsConsole.writeLine();
+        }
+    </script>
+</body>
+</html>

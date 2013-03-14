@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program finds the lexicographically smallest and largest<br />
+             property in document, window and navigator objects</h1>        
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var inputArr = [window, navigator, document];
+
+            for (var i = 0; i < 3; i++)
+            {
+                var output = "";
+                var myArr;
+                for (var property in inputArr[i])
+                {
+                    output += property + " ";
+                }
+
+                myArr = output.split(" ");
+                myArr.sort();
+
+                jsConsole.writeLine("In " + inputArr[i] + " we have:");
+                output = "Smallest property: " + myArr[1] + "; Largest property: " + myArr[myArr.length - 1] + ";";
+                jsConsole.writeLine(output);
+            }            
+        }
+    </script>
+</body>
+</html>

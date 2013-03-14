@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to find MIN and MAX number from given sequence</h1>
+        <div id="input">
+            <label for="number">Enter a sequence of numbers separated by ONE space between them</label>
+            <input type="text" id="number" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = document.getElementById("number").value;
+            var inputArr = input.split(" ");
+            inputArr.sort(function (a, b) { return a - b });
+
+            var output = "Min value is: " + inputArr[0] + " and Max value is: " + inputArr[inputArr.length - 1];
+
+            if ((isNaN(parseInt(inputArr[0]))) || (isNaN(parseInt(inputArr[inputArr.length -1]))))
+            {
+                jsConsole.writeLine("Invalid input! Please try again - it must be ONLY ONE SPACE between numbers :)");
+            }
+            else
+            {
+                jsConsole.writeLine(output);
+            }
+        }
+    </script>
+</body>
+</html>
