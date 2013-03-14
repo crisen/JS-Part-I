@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program checks for given integer if <br /> its third digit (right-to-left) is 7</h1>
+        <div id="input">
+            <label for="number">Number to check:</label>
+            <input type="text" id="number" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = jsConsole.readFloat("#number");
+            var removeFirstTwoDigits = parseInt(input / 100);
+
+            var thirdDigit = removeFirstTwoDigits % 10;
+            if (thirdDigit == 7)
+            {
+                jsConsole.writeLine("True")
+            }
+            else
+            {
+                jsConsole.writeLine("False")
+            }
+        }
+    </script>
+</body>
+</html>

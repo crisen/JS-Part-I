@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program checks if given positive integer <br /> number n (n <= 100) is prime</h1>
+        <div id="input">
+            <label for="number">Number to check:</label>
+            <input type="text" id="number" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = jsConsole.readInteger("#number");
+           
+            var isPrime = true;
+            if (input < 2)
+            {
+                jsConsole.writeLine("The number " + input + " is not prime");
+                isPrime = false;
+            }
+            else
+            {
+                for (var i = 2; i < input; i++)
+                {
+                    if (input % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+               
+            if (isPrime == true)
+            {
+                jsConsole.writeLine("Number " + input + " is prime");
+            }
+            else
+            {
+                jsConsole.writeLine("Number " + input + " is not a prime number");
+            }
+        }	       
+    </script>
+</body>
+</html>

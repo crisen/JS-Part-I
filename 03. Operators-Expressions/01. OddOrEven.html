@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Let's check if given number is Odd or Even!</h1>
+        <div id="input">
+            <label for="number">Number to check:</label>
+            <input type="text" id="number" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = jsConsole.readFloat("#number");
+
+            if (input % 2 == 0) {
+                jsConsole.writeLine("The number " + input + " is EVEN");
+            }
+            else if (input % 2 == 1)
+            {
+                jsConsole.writeLine("The number " + input + " is ODD")
+            }
+            else
+            {
+                jsConsole.writeLine("Please enter a correct number!")
+            }           
+        }
+    </script>
+</body>
+</html>
