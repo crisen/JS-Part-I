@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program shows the name of the number<br />
+            in the range [0...999] that you entered</h1>
+        <div id="input">
+            <label for="first">Enter your number here:</label>
+            <input type="text" id="first" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = jsConsole.readInteger("#first");
+            var numStr = input.toString();
+
+            if (numStr.length == 1)
+            {
+                switch (parseInt(numStr))
+                {
+                    case 0: jsConsole.writeLine("Zero"); break;
+                    case 1: jsConsole.writeLine("One"); break;
+                    case 2: jsConsole.writeLine("Two"); break;
+                    case 3: jsConsole.writeLine("Three"); break;
+                    case 4: jsConsole.writeLine("Four"); break;
+                    case 5: jsConsole.writeLine("Five"); break;
+                    case 6: jsConsole.writeLine("Six"); break;
+                    case 7: jsConsole.writeLine("Seven"); break;
+                    case 8: jsConsole.writeLine("Eight"); break;
+                    case 9: jsConsole.writeLine("Nine"); break;
+                    default: jsConsole.writeLine("Not allowed number!"); break;
+                }
+            }
+
+            if (numStr.length == 2)
+            {
+                if (parseInt(numStr[0]) != 1)
+                {
+                    switch (parseInt(numStr[0]))
+                    {
+                        case 2: jsConsole.write("Twenty "); break;
+                        case 3: jsConsole.write("Thirty "); break;
+                        case 4: jsConsole.write("Fourty "); break;
+                        case 5: jsConsole.write("Fifty "); break;
+                        case 6: jsConsole.write("Sixty "); break;
+                        case 7: jsConsole.write("Seventy "); break;
+                        case 8: jsConsole.write("Eighty "); break;
+                        case 9: jsConsole.write("Ninety "); break;
+                        default:
+                    }
+
+                    switch (parseInt(numStr[1]))
+                    {
+                        case 1: jsConsole.writeLine("One"); break;
+                        case 2: jsConsole.writeLine("Two"); break;
+                        case 3: jsConsole.writeLine("Three"); break;
+                        case 4: jsConsole.writeLine("Four"); break;
+                        case 5: jsConsole.writeLine("Five"); break;
+                        case 6: jsConsole.writeLine("Six"); break;
+                        case 7: jsConsole.writeLine("Seven"); break;
+                        case 8: jsConsole.writeLine("Eight"); break;
+                        case 9: jsConsole.writeLine("Nine"); break;
+                        default:
+                    }
+                }
+                else
+                {
+                    switch (parseInt(numStr[1]))
+                    {
+                        case 0: jsConsole.writeLine("Ten"); break;
+                        case 1: jsConsole.writeLine("Eleven"); break;
+                        case 2: jsConsole.writeLine("Twelve"); break;
+                        case 3: jsConsole.writeLine("Thirteen"); break;
+                        case 4: jsConsole.writeLine("Fourteen"); break;
+                        case 5: jsConsole.writeLine("Fifteen"); break;
+                        case 6: jsConsole.writeLine("Sixteen"); break;
+                        case 7: jsConsole.writeLine("Seventeen"); break;
+                        case 8: jsConsole.writeLine("Eighteen"); break;
+                        case 9: jsConsole.writeLine("Nineteen"); break;
+                        default:
+                    }
+                }
+            }
+
+            if (numStr.length == 3)
+            {
+                switch (parseInt(numStr[0]))
+                {
+                    case 1: jsConsole.write("One hundred "); break;
+                    case 2: jsConsole.write("Two hundred "); break;
+                    case 3: jsConsole.write("Three hundred "); break;
+                    case 4: jsConsole.write("Four hundred "); break;
+                    case 5: jsConsole.write("Five hundred "); break;
+                    case 6: jsConsole.write("Six hundred "); break;
+                    case 7: jsConsole.write("Seven hundred "); break;
+                    case 8: jsConsole.write("Eight hundred "); break;
+                    case 9: jsConsole.write("Nine hundred "); break;
+                    default:
+                }
+                if (parseInt(numStr[1]) == 0)
+                {
+                    switch (parseInt(numStr[2]))
+                    {
+                        case 1: jsConsole.writeLine("and one"); break;
+                        case 2: jsConsole.writeLine("and two"); break;
+                        case 3: jsConsole.writeLine("and three"); break;
+                        case 4: jsConsole.writeLine("and four"); break;
+                        case 5: jsConsole.writeLine("and five"); break;
+                        case 6: jsConsole.writeLine("and six"); break;
+                        case 7: jsConsole.writeLine("and seven"); break;
+                        case 8: jsConsole.writeLine("and eight"); break;
+                        case 9: jsConsole.writeLine("and nine"); break;
+                        default:
+                    }
+                }
+                if (parseInt(numStr[1]) == 1)
+                {
+                    switch (parseInt(numStr[2]))
+                    {
+                        case 0: jsConsole.writeLine("and ten"); break;
+                        case 1: jsConsole.writeLine("and eleven"); break;
+                        case 2: jsConsole.writeLine("and twelve"); break;
+                        case 3: jsConsole.writeLine("and thirteen"); break;
+                        case 4: jsConsole.writeLine("and fourteen"); break;
+                        case 5: jsConsole.writeLine("and fifteen"); break;
+                        case 6: jsConsole.writeLine("and sixteen"); break;
+                        case 7: jsConsole.writeLine("and seventeen"); break;
+                        case 8: jsConsole.writeLine("and eighteen"); break;
+                        case 9: jsConsole.writeLine("and nineteen"); break;
+                        default:
+                    }
+                }
+                if (parseInt(numStr[1]) != 0 && parseInt(numStr[1]) != 1)
+                {
+                    switch (parseInt(numStr[1]))
+                    {
+                        case 2: jsConsole.write("and twenty "); break;
+                        case 3: jsConsole.write("and thirty "); break;
+                        case 4: jsConsole.write("and fourty "); break;
+                        case 5: jsConsole.write("and fifty "); break;
+                        case 6: jsConsole.write("and sixty "); break;
+                        case 7: jsConsole.write("and seventy "); break;
+                        case 8: jsConsole.write("and eighty "); break;
+                        case 9: jsConsole.write("and ninety "); break;
+                        default:
+                    }
+                    switch (parseInt(numStr[2])) {
+                        case 1: jsConsole.writeLine("one"); break;
+                        case 2: jsConsole.writeLine("two"); break;
+                        case 3: jsConsole.writeLine("three"); break;
+                        case 4: jsConsole.writeLine("four"); break;
+                        case 5: jsConsole.writeLine("five"); break;
+                        case 6: jsConsole.writeLine("six"); break;
+                        case 7: jsConsole.writeLine("seven"); break;
+                        case 8: jsConsole.writeLine("eight"); break;
+                        case 9: jsConsole.writeLine("nine"); break;
+                        default:
+                    }
+                }
+            }
+
+            if (numStr.length > 3)
+            {
+                jsConsole.writeLine("Incorrect number! Please enter number in the range [0...999]");
+            }
+        }
+     </script>
+</body>
+</html>

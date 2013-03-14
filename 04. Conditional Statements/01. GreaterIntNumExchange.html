@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to examines two integer variables and exchanges <br /> 
+            their values if the first one is greater than the second one.</h1>
+        <div id="input">
+            <label for="first">First value:</label>
+            <input type="text" id="first" />
+
+            <label for="second">Second value:</label>
+            <input type="text" id="second" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var firstValue = jsConsole.readInteger("#first");
+            var secondValue = jsConsole.readInteger("#second");
+
+            jsConsole.writeLine("At the start we have:");
+            jsConsole.writeLine("First value = " + firstValue);
+            jsConsole.writeLine("Second value = " + secondValue);
+            jsConsole.writeLine();
+
+            var tempValue;
+            if (secondValue > firstValue)
+            {
+                tempValue = secondValue;
+                secondValue = firstValue;
+                firstValue = tempValue;
+            }
+            else if (firstValue == secondValue)
+            {
+                jsConsole.writeLine("The numbers are equal!!!");
+            }
+            
+            jsConsole.writeLine("In the end we have:");
+            jsConsole.writeLine("First value = " + firstValue);
+            jsConsole.writeLine("Second value = " + secondValue);
+            jsConsole.writeLine();
+        }
+    </script>
+</body>
+</html>

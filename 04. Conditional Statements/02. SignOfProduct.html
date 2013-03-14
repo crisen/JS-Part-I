@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program checks for the sign (+ or -) of the product of three real <br />
+            numbers without calculating it. So, let's do it :)</h1>
+        <div id="input">
+            <label for="first">a =</label>
+            <input type="text" id="first" />
+
+            <label for="second">b = </label>
+            <input type="text" id="second" />
+
+            <label for="third">c = </label>
+            <input type="text" id="third" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var a = jsConsole.readInteger("#first");
+            var b = jsConsole.readInteger("#second");
+            var c = jsConsole.readInteger("#third");
+
+            if ((a < 0 && b > 0 && c > 0) || (a > 0 && b < 0 && c > 0) || (a > 0 && b > 0 && c < 0) || (a < 0 && b < 0 && c < 0))
+            {
+                jsConsole.writeLine("Sign of the product is \"-\"")
+            }
+            else
+            {
+                jsConsole.writeLine("Sign of the product is \"+\"")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program solves a quadratic equation <br />
+            by given coefficients a, b and c :]
+        </h1>
+        <div id="input">
+            <label for="first">a =</label>
+            <input type="text" id="first" />
+
+            <label for="second">b = </label>
+            <input type="text" id="second" />
+
+            <label for="third">c = </label>
+            <input type="text" id="third" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var a = jsConsole.readFloat("#first");
+            var b = jsConsole.readFloat("#second");
+            var c = jsConsole.readFloat("#third");
+          
+            var D = b * b - 4 * a * c;
+            jsConsole.writeLine("Discriminant \"D\" is: " + D);
+            var x, x1, x2;
+
+            if (D > 0)
+            {
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b - Math.sqrt(D)) / (2 * a);
+                jsConsole.writeLine("x1 = " + x1 + " x2 = " + x2);
+            }
+            else if (D < 0)
+            {
+                jsConsole.writeLine("There is no real roots!");
+            }
+
+            else if (D == 0)
+            {
+                x = -b / 2 * a;
+                jsConsole.writeLine("x1 = x2 = " + x);
+            }
+        }
+    </script>
+</body>
+</html>

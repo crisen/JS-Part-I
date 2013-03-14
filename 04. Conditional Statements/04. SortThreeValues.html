@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>This program sorts 3 real values in descending order</h1>
+        <div id="input">
+            <label for="first">a =</label>
+            <input type="text" id="first" />
+
+            <label for="second">b = </label>
+            <input type="text" id="second" />
+
+            <label for="third">c = </label>
+            <input type="text" id="third" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var a = jsConsole.readInteger("#first");
+            var b = jsConsole.readInteger("#second");
+            var c = jsConsole.readInteger("#third");
+
+            if (a == b || a == c || b == c)
+            {
+                jsConsole.writeLine("Some of the numbers are equal!");
+            }
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    if (b > c)
+                    {
+                        jsConsole.writeLine("The numbers in descending order are: " + a + " " + b +  " " + c);
+                    }
+                    else
+                    {
+                        jsConsole.writeLine("The numbers in descending order are: " + a + " " + c + " " + b);
+                    }
+                }
+                else
+                {
+                    jsConsole.writeLine("The numbers in descending order are: " + c + " " + a + " " + b);
+                }
+            }
+            else if ((b > a) && (c > b))
+            {
+                jsConsole.writeLine("The numbers in descending order are: " + c + " " + b + " " + a);
+            }
+            else if ((b > a) && (a > c))
+            {
+                jsConsole.writeLine("The numbers in descending order are: " + b + " " + a + " " + c);
+            }
+            else if ((b > a) && (c > a))
+            {
+                jsConsole.writeLine("The numbers in descending order are: " + b + " " + c + " " + a);
+            }
+        }
+    </script>
+</body>
+</html>

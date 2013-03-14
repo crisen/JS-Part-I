@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>This program finds the greatest of given 5 variables</h1>
+        <div id="input">
+            <label for="first">a =</label>
+            <input type="text" id="first" />
+
+            <label for="second">b = </label>
+            <input type="text" id="second" />
+
+            <label for="third">c = </label>
+            <input type="text" id="third" />
+
+            <label for="fourth">d = </label>
+            <input type="text" id="fourth" />
+
+            <label for="fifth">e = </label>
+            <input type="text" id="fifth" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var a = jsConsole.readInteger("#first");
+            var b = jsConsole.readInteger("#second");
+            var c = jsConsole.readInteger("#third");
+            var d = jsConsole.readInteger("#fourth");
+            var e = jsConsole.readInteger("#fifth");
+
+            if ((a > b) && (a > c) && (a > d) && (a > e))
+            {
+                jsConsole.writeLine("The greatest value of the given five variables is: " + a);
+            }
+            if ((b > a) && (b > c) && (b > d) && (b > e))
+            {
+                jsConsole.writeLine("The greatest value of the given five variables is: " + b);
+            }
+            if ((c > a) && (c > b) && (c > d) && (c > e))
+            {
+                jsConsole.writeLine("The greatest value of the given five variables is: " + c);
+            }
+            if ((d > a) && (d > b) && (d > c) && (d > e))
+            {
+                jsConsole.writeLine("The greatest value of the given five variables is: " + d);
+            }
+            if ((e > a) && (e > b) && (e > c) && (e > d))
+            {
+                jsConsole.writeLine("The greatest value of the given five variables is: " + e);
+            }
+        }
+    </script>
+</body>
+</html>
