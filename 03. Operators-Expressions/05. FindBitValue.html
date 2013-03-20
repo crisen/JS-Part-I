@@ -26,8 +26,8 @@ bit 3 (counting from 0) of a given integer is 1 or 0. -->
     <script>
         function checkButton() {
             var input = jsConsole.readInteger("#number");
-
             var position = 3;
+			
             var mask = 1 << position;
             var result = input & mask;
             var bitValue = result >> position;
