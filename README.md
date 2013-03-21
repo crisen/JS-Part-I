@@ -20,4 +20,5 @@ http://htmlpreview.github.com/?https://github.com/VLADominator/JS-Part-I/blob/ma
 
 
 Best regards,
+
 Vladimir Vasilev
