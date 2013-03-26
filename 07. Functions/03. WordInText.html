@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+     <div id="content">
+        <h1>Write a function that finds all the occurrences of word in a text. The search can
+             case sensitive or case insensitive. Use function overloading </h1>
+     </div>
+   
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        var text = "Master, master, master of puppets I'm pulling your strings, twisting your mind and smashing your dreams- blinded by me, you can't see a thing- just call my name 'cause I'll hear you scream- Master, Master!!!";
+        var wordToSearch = "master";
+        var isCaseSensitive = false;
+
+        jsConsole.writeLine("The text is: " + text);
+        jsConsole.writeLine();
+
+        CountOccurenceWord(text, wordToSearch);
+        CountOccurenceWord(text, wordToSearch, true);
+
+        function CountOccurenceWord(text, wordToSearch, isCaseSensitive)
+        {
+            isCaseSensitive = isCaseSensitive || false;
+            var countSearchedWord = 0;
+
+            if (isCaseSensitive === false)
+            {
+                var strArr = text.split(wordToSearch);
+                for (var str in strArr)
+                {
+                    countSearchedWord++;
+                }
+
+                jsConsole.writeLine("Case-insensitive search: " + countSearchedWord)
+            }
+            else
+            {
+                var index = text.indexOf(wordToSearch);
+                while (index >= 0)
+                {
+                    countSearchedWord++;
+                    index = text.indexOf(wordToSearch, index + 1);
+                }
+
+                jsConsole.writeLine("Case-sensitive search: " + countSearchedWord)
+            }
+        }
+    </script>
+</body>
+</html>

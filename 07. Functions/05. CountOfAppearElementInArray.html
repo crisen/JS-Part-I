@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+       <div id="content">
+        <h1>Our task is to write a function that counts how many times given number appears in given array.<br />
+            Given array is { 1, 3, 5, 3, 5, 5, 5, 3, 7, 5, 7, 7, 2, 6, 6, 12, 17, 25, 55, 75 }
+        </h1>
+        <div id="input">
+            <label for="tb-input">Check for number:</label>
+            <input type="text" id="tb-input" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkNumAppear()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkNumAppear() {
+            var myArray = new Array(1, 3, 5, 3, 5, 5, 5, 3, 7, 5, 7, 7, 2, 6, 6, 12, 17, 25, 55, 75);
+            var checkNum = jsConsole.readInteger("#tb-input");
+            
+            if (isNaN(checkNum))
+            {
+                jsConsole.writeLine("ERROR! Please enter a correct number!")
+            }
+            else
+            {
+                var repeatCount = 0;
+                for (var i = 0; i < myArray.length; i++)
+                {                
+                    if (myArray[i] == checkNum)
+                    {
+                        repeatCount++;
+                    }
+                }
+
+                jsConsole.writeLine("The given number " + checkNum + " appears " + repeatCount + " times in the given array");
+            }
+        }
+    </script>
+</body>
+</html>
